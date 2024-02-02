@@ -18,12 +18,12 @@ cursor.execute(query)
 # Récupération des résultats
 resultats = cursor.fetchall()
 
-# Affichage des résultats en console
-print("Nom\t\tCapacité")
-print("---------------------")
+# Affichage des résultats en console avec alignement
+print("{:<20}{}".format("Nom", "Capacité"))
+print("-" * 28)
 for resultat in resultats:
     nom, capacite = resultat
-    print(f"{nom}\t\t{capacite}")
+    print("{:<20}{}".format(nom, capacite))
 
 # Fermeture du curseur et de la connexion
 cursor.close()
